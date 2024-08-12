@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style2.css">
+  <title>Confirmar Recebimento</title>
+</head>
+<body>
+  <h1>Você já recebeu seu pedido?</h1>
+  <button id="received-button">Recebi</button>
+  <button id="not-received-button">Ainda não recebi</button>
+
+  <script>
+    document.getElementById('received-button').addEventListener('click', () => {
+      alert('Volte sempre');
+      window.location.href = 'index.html';
+    });
+
+    document.getElementById('not-received-button').addEventListener('click', () => {
+      alert('Aguarde mais um pouco');
+    });
+  </script>
+</body>
+</html>

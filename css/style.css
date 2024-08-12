@@ -1,0 +1,95 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  text-align: center;
+}
+
+.category {
+  margin-bottom: 1.25rem;
+  width: 100%;
+  max-width: 600px; 
+}
+
+.card {
+ display: flex;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .625rem;
+  text-align: left; 
+  background-color: rgb(238, 238, 59);
+}
+
+.item input[type="number"] {
+  margin-left: 1rem;
+  border-radius: 5px;
+  size: 18px;
+}
+
+
+
+div {
+  border: 2px solid rgb(228, 160, 58);
+  background-color: rgb(238, 227, 227);
+  padding: 10px;
+}
+
+button{
+  margin: auto;
+  padding: 20px;
+  background-color: green;
+  font-size: 15px;
+  color: #fff;
+}
+
+.c-button{
+  background-color: #888;
+}
+
+.quantity-input {
+  display: none;
+}
+#description-container {
+  position: fixed;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: none;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+}
+
+#modal-order-summary {
+  text-align: left;
+  margin-bottom: 20px;
+}

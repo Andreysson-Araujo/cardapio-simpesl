@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Confirmar Pedido</title>
+</head>
+<body>
+  <h1>Confirmar Pedido</h1>
+  <form id="confirm-form">
+    <div>
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+      <label for="address">Endereço:</label>
+      <input type="text" id="address" name="address" required>
+    </div>
+    <div>
+      <h2>Forma de Pagamento:</h2>
+      <div>
+        <input type="radio" id="payment-card" name="payment" value="Cartão" required>
+        <label for="payment-card">Cartão</label>
+      </div>
+      <div>
+        <input type="radio" id="payment-pix" name="payment" value="Pix" required>
+        <label for="payment-pix">Pix</label>
+      </div>
+      <div>
+        <input type="radio" id="payment-cash" name="payment" value="Dinheiro" required>
+        <label for="payment-cash">Dinheiro</label>
+      </div>
+    </div>
+    <h2>Seu Pedido:</h2>
+    <div id="order-summary"></div>
+    <button type="submit">Confirmar e Enviar</button>
+  </form>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const orderSummary = document.getElementById('order-summary');
+      const order = JSON.parse(localStorage.getItem('order'));
+      if (order) {
+        order.items.forEach(item => {
+          const div = document.createElement('div');
+          div.textContent = `${item.name} - Quantidade: ${item.quantity} - Preço: R$${item.price}`;
+          orderSummary.appendChild(div);
+        });
+        const totalDiv = document.createElement('div');
+        totalDiv.textContent = `Total: R$${order.total}`;
+        orderSummary.appendChild(totalDiv);
+      }
+
+      document.getElementById('confirm-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const paymentMethod = document.querySelector('input[name="payment"]:checked');
+        if (!paymentMethod) {
+          alert('Por favor, selecione um método de pagamento.');
+          return;
+        }
+        alert(`Pedido Confirmado!\nMétodo de Pagamento: ${paymentMethod.value}`);
+        localStorage.removeItem('order');
+        window.location.href = 'receber.html';
+      });
+    });
+  </script>
+</body>
+</html>

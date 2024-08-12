@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Cardapio</title>
+</head>
+<body>
+  <h2>Total: R$ <span id="total">0.00</span></h2>
+  <div class="card">
+    <h1>Cardapio</h1>
+    <div class="category">
+      <h2>Sanduiches</h2>
+      <div class="item" data-description="Pão, queijo e presunto, grelhados até derreter.">
+        <input type="checkbox" id="sand1" name="sand1" value="5">
+        <label for="sand1">Misto quente - R$5,00</label>
+        <input type="number" id="sand1_qty" name="sand1_qty" class="quantity-input" min="1" max="10" value="1">
+      </div>
+      <div class="item" data-description="Pão, ovo frito e queijo.">
+        <input type="checkbox" id="sand2" name="sand2" value="7">
+        <label for="sand2">X-Ovo - R$7,00</label>
+        <input type="number" id="sand2_qty" name="sand2_qty" class="quantity-input" min="1" max="10" value="1">
+      </div>
+      <div class="item" data-description="Pão com carne de hambúrguer, alface e tomate.">
+        <input type="checkbox" id="sand3" name="sand3" value="10">
+        <label for="sand3">Hamburguer - R$10,00</label>
+        <input type="number" id="sand3_qty" name="sand3_qty" class="quantity-input" min="1" max="10" value="1">
+      </div>
+      <div class="item" data-description="Pão com peito de frango grelhado e molho especial.">
+        <input type="checkbox" id="sand4" name="sand4" value="13">
+        <label for="sand4">FranBurguer- R$13,00</label>
+        <input type="number" id="sand4_qty" name="sand4_qty" class="quantity-input" min="1" max="10" value="1">
+      </div>
+    </div>
+    <div class="category">
+      <h2>Salgados</h2>
+      <div class="item" data-description="Kibe recheado com carne moída.">
+        <input type="checkbox" id="salg1" name="salg1" value="3">
+        <label for="salg1">Kibe de Arroz - R$3,00</label>
+        <input type="number" id="salg1_qty" name="salg1_qty" class="quantity-input" min="1" max="10" value="1">
+      </div>
+      <div class="item" data-description="Enrolado de presunto e queijo.">
+        <input type="checkbox" id="salg2" name="salg2" value="3">
+        <label for="salg2">Enroladinho - R$3,00</label>
+        <input type="number" id="salg2_qty" name="salg2_qty" class="quantity-input" min="1" max="10" value="1">
+      </div>
+      <div class="item" data-description="Saltenha de frango.">
+        <input type="checkbox" id="salg3" name="salg3" value="4">
+        <label for="salg3">Saltenha - R$4,00</label>
+        <input type="number" id="salg3_qty" name="salg3_qty" class="quantity-input" min="1" max="10" value="1">
+      </div>
+      <div class="item" data-description="Pastel recheado com carne moída.">
+        <input type="checkbox" id="salg4" name="salg4" value="4">
+        <label for="salg4">Pastel - R$4,00</label>
+        <input type="number" id="salg4_qty" name="salg4_qty" class="quantity-input" min="1" max="10" value="1">
+      </div>
+    </div>
+    <div class="category">
+      <h2>Almoço</h2>
+      <div class="item" data-description="Calabresa frita com cebola.">
+        <input type="checkbox" id="almo1" name="almo1" value="13">
+        <label for="almo1">Calabresa Frita - R$13,00</label>
+        <input type="number" id="almo1_qty" name="almo1_qty" class="quantity-input" min="1" max="10" value="1">
+      </div>
+      <div class="item" data-description="Peito de frango grelhado com temperos.">
+        <input type="checkbox" id="almo2" name="almo2" value="15">
+        <label for="almo2">Frango grelhado - R$15,00</label>
+        <input type="number" id="almo2_qty" name="almo2_qty" class="quantity-input" min="1" max="10" value="1">
+      </div>
+      <div class="item" data-description="Alcatra grelhada na chapa com molho especial.">
+        <input type="checkbox" id="almo3" name="almo3" value="18">
+        <label for="almo3">Alcatra na chapa - R$18,00</label>
+        <input type="number" id="almo3_qty" name="almo3_qty" class="quantity-input" min="1" max="10" value="1">
+      </div>
+    </div>
+  </div>
+  <div id="description-container"></div>
+  <button id="order-button">Realizar Pedido</button>
+  
+  <!-- Modal Structure -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h2>Resumo do Pedido</h2>
+      <div id="modal-order-summary"></div>
+      <p>Total: R$ <span id="modal-total">0.00</span></p>
+      <button id="close-modal" class="c-button">Voltar a area de Pedidos</button>
+      <button id="confirm-order">Confirmar Pedido</button>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
